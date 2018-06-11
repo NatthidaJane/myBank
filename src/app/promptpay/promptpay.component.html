@@ -1,0 +1,94 @@
+<!--component html goes here -->
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/fabio-mangione.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name">
+                    <h4 class="title">Nat Jane
+                        <br />
+                    </h4>
+                    <h6 class="description">Blah Blah</h6>
+                </div>
+            </div>
+
+            <br/>
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <ngb-tabset [justify]="'center'">
+                        <ngb-tab title="Register">
+
+                            <ng-template ngbTabContent>
+
+                                <h2 class="text-center">Register PromtPay</h2>
+                                <br>
+                                <!-- <h6>Select Type</h6>
+                                <div class="row">
+                                        <div class="containerImage">
+                                                <img src="https://image.flaticon.com/icons/svg/186/186239.svg" alt="Mobile" class="image resize">
+                                                <div class="overlay">
+                                                  <div class="text">Mobile</div>
+                                                </div>
+                                        </div>
+                                        <div class="containerImage">
+                                                <img src="https://image.flaticon.com/icons/svg/189/189085.svg" alt="Mobile" class="image resize">
+                                                <div class="overlay">
+                                                  <div class="text">ID card</div>
+                                                </div>
+                                        </div>
+                                </div> -->
+
+                                <form class="contact-form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Mobile/ID Card</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-single-02"></i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Mobile Number/No. ID Card</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-single-02"></i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mr-auto ml-auto">
+                                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="GetDetail">
+                            <ng-template ngbTabContent>
+                                <h3 class="text-muted">Not following anyone yet :(</h3>
+                                <br>
+                                <button class="btn btn-warning btn-round">Find artists</button>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Delete">
+                            <ng-template ngbTabContent>
+                                <h3 class="text-muted">Not following anyone yet :(</h3>
+                                <br>
+                                <button class="btn btn-warning btn-round">Find artists</button>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
