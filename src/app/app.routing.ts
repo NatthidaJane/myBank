@@ -11,6 +11,7 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { MainComponent } from "./main/main.component";
 import { PromptpayComponent } from "./promptpay/promptpay.component";
 import {AccountComponent} from "./account/account.component";
+import {MoneyTranferComponent} from "./money-tranfer/money-tranfer.component"
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'promptpay', component: PromptpayComponent },
   { path: 'main', component: MainComponent },
   { path: 'account',component:AccountComponent},
+  { path: 'moneytranfer',component:MoneyTranferComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

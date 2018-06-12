@@ -1,0 +1,151 @@
+<!--component html goes here -->
+<nav class="navbar navbar-expand-lg bg-info sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Standard Chatered</a>
+        <div class="" id="navbar-warning">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/StandardBanner.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name">
+                    <h4 class="title">Nat Jane
+                        <br />
+                    </h4>
+                    <h6 class="description">Promptpay service</h6>
+                </div>
+            </div>
+
+            <br/>
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <ngb-tabset [justify]="'center'" type="pills" class="nav-pills-danger">
+                        <ngb-tab title="PromtpPay">
+
+                            <ng-template ngbTabContent>
+
+                                <h2 class="text-center">PromtpPay</h2>
+                                <br>
+
+
+                                <form class="contact-form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>From Account</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-badge"></i>
+                                                </span>
+                                                <select class="form-control" [(ngModel)]="registerSet.AccountID" name="id">
+                                                    <option *ngFor="let acc of accountList" [ngValue]="acc">{{acc}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Mobile/Citizen Card</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-single-02"></i>
+                                                </span>
+                                                <select class="form-control" [(ngModel)]="registerSet.IDType" name="type">
+                                                    <option value="mobile">Mobile No.</option>
+                                                    <option value="Citizen">Citizen ID.</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Mobile Number/No. ID Card</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-credit-card"></i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Amount</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="nc-icon nc-badge"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" placeholder="Name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- <br> -->
+                                    <button class="btn btn-warning btn-round">Send</button>
+                                </form>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Account Number">
+                            <ng-template ngbTabContent>
+
+                                <h2 class="text-center">Account Number</h2>
+                                <br>
+                                <form class="contact-form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>From Account</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-badge"></i>
+                                                </span>
+                                                <select class="form-control" [(ngModel)]="registerSet.AccountID" name="id">
+                                                    <option *ngFor="let acc of accountList" [ngValue]="acc">{{acc}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                <label>To Account</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="nc-icon nc-badge"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" placeholder="Name">
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Amount</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="nc-icon nc-badge"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" placeholder="Name">
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <!-- <br> -->
+                                    <button class="btn btn-warning btn-round">Send</button>
+                                </form>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

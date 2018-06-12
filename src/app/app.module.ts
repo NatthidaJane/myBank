@@ -18,6 +18,7 @@ import { NavbarService } from "./service/navbar.service";
 import { PromptpayComponent } from "./promptpay/promptpay.component";
 import { AccountComponent} from "./account/account.component";
 import { Routes, RouterModule } from '@angular/router';
+import { MoneyTranferComponent} from './money-tranfer/money-tranfer.component'
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'user-profile', component: ProfileComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
     FooterComponent,
     MainComponent,
     PromptpayComponent,
-    AccountComponent
+    AccountComponent,
+    MoneyTranferComponent
   ],
   imports: [
     BrowserModule,

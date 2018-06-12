@@ -15,13 +15,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
                         <div class="card card-register">
                             <h3 class="title">Login</h3>
-                            <form class="register-form">
+                            <form ngNativeValidate class="register-form" (submit)="signin()">
                                 <label>Username</label>
                                 <div class="input-group form-group-no-border">
                                     <span class="input-group-addon">
                                         <i class="nc-icon nc-badge"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Username">
+                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
                                 </div>
 
                                 <label>Password</label>
@@ -29,9 +29,9 @@
                                     <span class="input-group-addon">
                                         <i class="nc-icon nc-key-25"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Password">
+                                    <input type="password" name="Password" class="form-control" placeholder="Password" required>
                                 </div>
-                                <button (click)="signin()"class="btn btn-info btn-block btn-round">Login</button>
+                                <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
                             </form>
                             <div class="forgot">
                                 <a [routerLink]="['/main']" class="btn btn-link btn-info">Register</a>

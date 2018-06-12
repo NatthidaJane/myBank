@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
         middle: false,
         right: false
     };
+    
     constructor(private router:Router) { }
 
     ngOnInit() {}
