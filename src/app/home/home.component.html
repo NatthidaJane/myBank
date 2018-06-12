@@ -31,10 +31,10 @@
                                     </span>
                                     <input type="text" class="form-control" placeholder="Password">
                                 </div>
-                                <button class="btn btn-info btn-block btn-round">Login</button>
+                                <button (click)="signin()"class="btn btn-info btn-block btn-round">Login</button>
                             </form>
                             <div class="forgot">
-                                <a href="#" class="btn btn-link btn-info">Register</a>
+                                <a [routerLink]="['/main']" class="btn btn-link btn-info">Register</a>
                             </div>
                         </div>
                     </div>

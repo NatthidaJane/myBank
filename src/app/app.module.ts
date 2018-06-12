@@ -16,6 +16,7 @@ import { MainComponent } from "./main/main.component";
 import { HomeModule } from './home/home.module';
 import { NavbarService } from "./service/navbar.service";
 import { PromptpayComponent } from "./promptpay/promptpay.component";
+import { AccountComponent} from "./account/account.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PromptpayComponent } from "./promptpay/promptpay.component";
     NavbarComponent,
     FooterComponent,
     MainComponent,
-    PromptpayComponent
+    PromptpayComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

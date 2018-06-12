@@ -25,50 +25,50 @@
 
                             <ng-template ngbTabContent>
 
-                                <h2 class="text-center">Register PromtPay</h2>
+                                <h2 class="text-center">Register PromtpPay</h2>
                                 <br>
-                                <!-- <h6>Select Type</h6>
-                                <div class="row">
-                                        <div class="containerImage">
-                                                <img src="https://image.flaticon.com/icons/svg/186/186239.svg" alt="Mobile" class="image resize">
-                                                <div class="overlay">
-                                                  <div class="text">Mobile</div>
-                                                </div>
-                                        </div>
-                                        <div class="containerImage">
-                                                <img src="https://image.flaticon.com/icons/svg/189/189085.svg" alt="Mobile" class="image resize">
-                                                <div class="overlay">
-                                                  <div class="text">ID card</div>
-                                                </div>
-                                        </div>
-                                </div> -->
+
 
                                 <form class="contact-form">
                                     <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Select Account</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-badge"></i>
+                                                </span>
+                                                <select class="form-control" [(ngModel)]="registerSet.AccountID" name="id">
+                                                    <option *ngFor="let acc of accountList" [ngValue]="acc">{{acc}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-6">
-                                            <label>Mobile/ID Card</label>
+                                            <label>Mobile/Citizen Card</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
                                                     <i class="nc-icon nc-single-02"></i>
                                                 </span>
-                                                <input type="text" class="form-control" placeholder="Name">
+                                                <select class="form-control" [(ngModel)]="registerSet.IDType" name="type">
+                                                    <option value="mobile">Mobile No.</option>
+                                                    <option value="Citizen">Citizen ID.</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <label>Mobile Number/No. ID Card</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
-                                                    <i class="nc-icon nc-single-02"></i>
+                                                    <i class="nc-icon nc-credit-card"></i>
                                                 </span>
                                                 <input type="text" class="form-control" placeholder="Name">
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-4 mr-auto ml-auto">
-                                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
+                                    <!-- <br> -->
+                                    <button class="btn btn-warning btn-round">Register</button>
                                 </form>
                             </ng-template>
                         </ngb-tab>
@@ -80,11 +80,56 @@
                             </ng-template>
                         </ngb-tab>
                         <ngb-tab title="Delete">
-                            <ng-template ngbTabContent>
-                                <h3 class="text-muted">Not following anyone yet :(</h3>
-                                <br>
-                                <button class="btn btn-warning btn-round">Find artists</button>
-                            </ng-template>
+                                <ng-template ngbTabContent>
+
+                                        <h2 class="text-center">Delete PromtpPay</h2>
+                                        <br>
+                                        <!-- <h6>Select Type</h6>
+                                        <div class="row">
+                                                <div class="containerImage">
+                                                        <img src="https://image.flaticon.com/icons/svg/186/186239.svg" alt="Mobile" class="image resize">
+                                                        <div class="overlay">
+                                                          <div class="text">Mobile</div>
+                                                        </div>
+                                                </div>
+                                                <div class="containerImage">
+                                                        <img src="https://image.flaticon.com/icons/svg/189/189085.svg" alt="Mobile" class="image resize">
+                                                        <div class="overlay">
+                                                          <div class="text">ID card</div>
+                                                        </div>
+                                                </div>
+                                        </div> -->
+        
+                                        <form class="contact-form">
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Mobile/Citizen Card</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="nc-icon nc-single-02"></i>
+                                                        </span>
+                                                        <select class="form-control" [(ngModel)]="registerSet.IDType" name="type">
+                                                            <option value="mobile">Mobile No.</option>
+                                                            <option value="Citizen">Citizen ID.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Mobile Number/No. ID Card</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="nc-icon nc-credit-card"></i>
+                                                        </span>
+                                                        <input type="text" class="form-control" placeholder="Name">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <!-- <br> -->
+                                            <button class="btn btn-warning btn-round">Register</button>
+                                        </form>
+                                    </ng-template>
                         </ngb-tab>
                     </ngb-tabset>
                 </div>

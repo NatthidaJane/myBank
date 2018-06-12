@@ -2,19 +2,19 @@
 import { NgModule } from '@angular/core';
 
 // This Module's Components
-import { PromptpayComponent } from './promptpay.component';
+import { AccountComponent } from './account.component';
 
 @NgModule({
     imports: [
 
     ],
     declarations: [
-        PromptpayComponent,
+        AccountComponent,
     ],
     exports: [
-        PromptpayComponent,
+        AccountComponent,
     ]
 })
-export class PromptpayModule {
-    
+export class AccountModule {
+
 }

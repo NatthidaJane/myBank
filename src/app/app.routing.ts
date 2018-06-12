@@ -10,6 +10,7 @@ import { LandingComponent } from './landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { MainComponent } from "./main/main.component";
 import { PromptpayComponent } from "./promptpay/promptpay.component";
+import {AccountComponent} from "./account/account.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,8 +18,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'landing', component: LandingComponent },
   { path: 'nucleoicons', component: NucleoiconsComponent },
-  { path: 'promtpay', component: PromptpayComponent },
+  { path: 'promptpay', component: PromptpayComponent },
   { path: 'main', component: MainComponent },
+  { path: 'account',component:AccountComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
