@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     ngOnInit() {}
 
     signin(){
+        console.log("vvv")
         this.router.navigate(['/main']);
     }
 }

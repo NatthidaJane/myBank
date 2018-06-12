@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule } from '@angular/router';
+//import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
@@ -17,7 +17,18 @@ import { HomeModule } from './home/home.module';
 import { NavbarService } from "./service/navbar.service";
 import { PromptpayComponent } from "./promptpay/promptpay.component";
 import { AccountComponent} from "./account/account.component";
-
+import { Routes, RouterModule } from '@angular/router';
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'user-profile', component: ProfileComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'landing', component: LandingComponent },
+  // { path: 'nucleoicons', component: NucleoiconsComponent },
+  { path: 'promptpay', component: PromptpayComponent },
+  { path: 'main', component: MainComponent },
+  { path: 'account',component:AccountComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,8 +47,10 @@ import { AccountComponent} from "./account/account.component";
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    RouterModule.forRoot(routes)
   ],
+  exports:[RouterModule],
   providers: [NavbarService],
   bootstrap: [AppComponent]
 })
