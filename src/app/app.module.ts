@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http'
 //import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
@@ -18,7 +20,8 @@ import { NavbarService } from "./service/navbar.service";
 import { PromptpayComponent } from "./promptpay/promptpay.component";
 import { AccountComponent} from "./account/account.component";
 import { Routes, RouterModule } from '@angular/router';
-import { MoneyTranferComponent} from './money-tranfer/money-tranfer.component'
+import { MoneyTranferComponent} from './money-tranfer/money-tranfer.component';
+import { UserService } from "./service/data.service";
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'user-profile', component: ProfileComponent },
@@ -45,6 +48,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpModule,
     NgbModule.forRoot(),
     FormsModule,
     RouterModule,
@@ -53,7 +58,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   exports:[RouterModule],
-  providers: [NavbarService],
+  providers: [NavbarService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

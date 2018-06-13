@@ -21,7 +21,7 @@
                                     <span class="input-group-addon">
                                         <i class="nc-icon nc-badge"></i>
                                     </span>
-                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                    <input type="text" name="username" [(ngModel)]="user.username" class="form-control" placeholder="Username" required>
                                 </div>
 
                                 <label>Password</label>
@@ -29,12 +29,12 @@
                                     <span class="input-group-addon">
                                         <i class="nc-icon nc-key-25"></i>
                                     </span>
-                                    <input type="password" name="Password" class="form-control" placeholder="Password" required>
+                                    <input type="password" [(ngModel)]="user.password" name="Password" class="form-control" placeholder="Password" required>
                                 </div>
                                 <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
                             </form>
                             <div class="forgot">
-                                <a [routerLink]="['/main']" class="btn btn-link btn-info">Register</a>
+                                <a (click)="testLogin(user.username,user.password)" class="btn btn-link btn-info">Register</a>
                             </div>
                         </div>
                     </div>
