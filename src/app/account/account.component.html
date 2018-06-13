@@ -1,71 +1,108 @@
 <!--component html goes here -->
 <nav class="navbar navbar-expand-lg bg-info sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Standard Chatered</a>
-            <div class="" id="navbar-warning">
-                <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/main']">Standard Chatered</a>
+        <div class="" id="navbar-warning">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['/main']">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
+    </div>
 </nav>
 <div class="wrapper">
     <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/StandardBanner.jpg');">
-        <h2 class="text-center" style="color: white;">Account Detail</h2>
         <div class="filter"></div>
+        <h2 class="text-center" style="color: white;z-index:3;">Account Detail</h2>
+
     </div>
-    <div class="section profile-content">
+    <div class="section profile-content" style="background-color:#dddddd; ">
         <div class="container">
-            <!-- <div class="owner">
-                <div class="avatar">
-                    <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                </div>
-                <div class="name">
-                    <h4 class="title">Nat Jane
-                        <br />
-                    </h4>
-                    <h6 class="description">Blah Blah</h6>
-                </div>
-            </div> -->
-
             <br/>
-
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
-                    <div class="card card-register">
-                        <h6>Account number</h6>
-                        <p>
-                            {{accountUserList[0].number}}
-                        </p>
-                        <h6>Account Type</h6>
-                        <p>
-                            {{accountUserList[0].accountType}}
-                        </p>
-                        <h6>Available balance</h6>
-                        <p>
-                            {{accountUserList[0].balanceAmount}}
-                        </p>
-                        <div class="forgot">
-                            <a href="#" class="btn btn-link btn-danger">Detail</a>
+                    <div class="card">
+                        <div class="containercard">
+                            <h5>Account number</h5>
+                            <h6>
+                                {{accountUserList[0].number}}
+                            </h6>
+                            <h5>Account Type</h5>
+                            <h6>
+                                {{accountUserList[0].accountType}}
+                            </h6>
+                            <h5>Available balance</h5>
+                            <h6>
+                                {{accountUserList[0].balanceAmount}} Bahts
+                            </h6>
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#one" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">see detail</button>
+                            <div class="collapse" id="one">
+                                <div class="bg-dark p-4">
+                                    <h4 class="text-white">Transaction</h4>
+                                    <div *ngFor="let transact of transactions; let i = index">
+                                        <h6 class="text-muted">{{transact.createDTM}}</h6>
+                                        <div class="text-right">
+                                            <div *ngIf="transact.txnType=='S'">
+                                                <span class="text-danger textBig">-{{transact.netAmount}}</span>
+                                            </div>
+                                            <div *ngIf="transact.txnType=='R'">
+                                                <span class="text-success textBig">+{{transact.netAmount}}</span>
+                                            </div>
+                                        </div>
+                                        <hr style="border: 2px solid #c9c9c9">
+                                        <!-- <span class="text-muted">{{transact.txnType}}</span> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+                    <div class="card ">
+                        <div class="containercard">
+                            <h5>Account number</h5>
+                            <h6>
+                                {{accountUserList[0].number}}
+                            </h6>
+                            <h5>Account Type</h5>
+                            <h6>
+                                {{accountUserList[0].accountType}}
+                            </h6>
+                            <h5>Available balance</h5>
+                            <h6>
+                                {{accountUserList[0].balanceAmount}} Bahts
+                            </h6>
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#two" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">see detail</button>
+                            <div class="collapse" id="two">
+                                <div class="bg-dark p-4">
+                                    <h4 class="text-white">Transaction</h4>
+                                    <div *ngFor="let transact of transactions; let i = index">
+                                        <h6 class="text-muted">{{transact.createDTM}}</h6>
+                                        <div class="text-right">
+                                            <div *ngIf="transact.txnType=='S'">
+                                                <span class="text-danger textBig">-{{transact.netAmount}}</span>
+                                            </div>
+                                            <div *ngIf="transact.txnType=='R'">
+                                                <span class="text-success textBig">+{{transact.netAmount}}</span>
+                                            </div>
+                                        </div>
+                                        <hr style="border: 2px solid #c9c9c9">
+                                        <!-- <span class="text-muted">{{transact.txnType}}</span> -->
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="pos-f-t">
-                    <div class="collapse" id="navbarToggleExternalContent">
-                      <div class="bg-dark p-4">
-                        <h4 class="text-white">Collapsed content</h4>
-                        <span class="text-muted">Toggleable via the navbar brand.</span>
-                      </div>
-                    </div>
-                    <nav class="navbar navbar-dark bg-dark">
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                    </nav>
-                  </div>
         </div>
     </div>
 </div>

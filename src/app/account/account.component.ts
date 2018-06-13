@@ -12,8 +12,20 @@ export class AccountComponent {
         {
         number:'1234567890',
         accountType:'Savings',
-        balanceAmount:'5000.0'
+        balanceAmount:'5000.00'
         }
+    ]
+    transactions=[
+        {
+            createDTM:'2018-06-08 04:34:38',
+            txnType:'S',
+            netAmount:'100.00'
+        },
+        {
+            createDTM:'2018-06-08 04:34:38',
+            txnType:'R',
+            netAmount:'100.00'
+        },
     ]
     constructor(private nav:NavbarService){
         this.nav.show();
