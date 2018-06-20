@@ -22,35 +22,35 @@
     <div class="section profile-content" style="background-color:#dddddd; ">
         <div class="container">
             <br/>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+            <div class="row" >
+                <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto" *ngFor="let account of accountList; let i = index">
                     <div class="card">
                         <div class="containercard">
                             <h5>Account number</h5>
                             <h6>
-                                {{accountUserList[0].number}}
+                                {{accountList[i].accountID}}
                             </h6>
                             <h5>Account Type</h5>
                             <h6>
-                                {{accountUserList[0].accountType}}
+                                {{accountList[i].accountType}}
                             </h6>
                             <h5>Available balance</h5>
                             <h6>
-                                {{accountUserList[0].balanceAmount}} Bahts
+                                {{accountList[i].balanceAmount}} Bahts
                             </h6>
-                            <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#one" aria-controls="navbarToggleExternalContent"
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" [attr.data-target]="'#' + i" aria-controls="navbarToggleExternalContent"
                                 aria-expanded="false" aria-label="Toggle navigation">see detail</button>
-                            <div class="collapse" id="one">
+                            <div class="collapse" id="{{i}}">
                                 <div class="bg-dark p-4">
                                     <h4 class="text-white">Transaction</h4>
-                                    <div *ngFor="let transact of transactions; let i = index">
+                                    <div *ngFor="let transact of transactions[i]">
                                         <h6 class="text-muted">{{transact.createDTM}}</h6>
                                         <div class="text-right">
-                                            <div *ngIf="transact.txnType=='S'">
-                                                <span class="text-danger textBig">-{{transact.netAmount}}</span>
+                                            <div *ngIf="transact.TxnType=='S'">
+                                                <span class="text-danger textBig">-{{transact.NetAmount}}</span>
                                             </div>
-                                            <div *ngIf="transact.txnType=='R'">
-                                                <span class="text-success textBig">+{{transact.netAmount}}</span>
+                                            <div *ngIf="transact.TxnType=='R'">
+                                                <span class="text-success textBig">+{{transact.NetAmount}}</span>
                                             </div>
                                         </div>
                                         <hr style="border: 2px solid #c9c9c9">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+                <!-- <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
                     <div class="card ">
                         <div class="containercard">
                             <h5>Account number</h5>
@@ -94,14 +94,14 @@
                                             </div>
                                         </div>
                                         <hr style="border: 2px solid #c9c9c9">
-                                        <!-- <span class="text-muted">{{transact.txnType}}</span> -->
+                                        <span class="text-muted">{{transact.txnType}}</span>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

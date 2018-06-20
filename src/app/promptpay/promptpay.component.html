@@ -1,15 +1,17 @@
 <!--component html goes here -->
 <nav class="navbar navbar-expand-lg bg-info sticky-top">
-        <div class="container">
-            <a class="navbar-brand" [routerLink]="['/main']">Standard Chatered</a>
-            <div class="" id="navbar-warning">
-                <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/main']"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/main']">Standard Chatered</a>
+        <div class="" id="navbar-warning">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/main']">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
+    </div>
 </nav>
 <div class="wrapper">
     <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/StandardBanner.jpg');">
@@ -32,10 +34,10 @@
             <br/>
             <div class="nav-tabs-navigation">
                 <div class="nav-tabs-wrapper">
-                    <ngb-tabset [justify]="'center'" type="pills" class="nav-pills-danger"  >
+                    <ngb-tabset [justify]="'center'" type="pills" class="nav-pills-danger">
                         <ngb-tab title="Register">
 
-                            <ng-template ngbTabContent >
+                            <ng-template ngbTabContent>
 
                                 <h2 class="text-center">Register PromtpPay</h2>
                                 <br>
@@ -50,7 +52,7 @@
                                                     <i class="nc-icon nc-badge"></i>
                                                 </span>
                                                 <select class="form-control" [(ngModel)]="registerSet.AccountID" name="id">
-                                                    <option *ngFor="let acc of accountList" [ngValue]="acc">{{acc}}</option>
+                                                    <option *ngFor="let acc of accountList" [ngValue]="acc.accountID">{{acc.accountID}}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -74,29 +76,45 @@
                                                 <span class="input-group-addon">
                                                     <i class="nc-icon nc-credit-card"></i>
                                                 </span>
-                                                <input type="text" class="form-control" placeholder="Name">
+                                                <input type="text" class="form-control" placeholder="value" [(ngModel)]="registerSet.IDValue" name="value">
                                             </div>
                                         </div>
-                                        
+
+                                    </div>
+                                    <div *ngIf="checkRegisterSuccess" class="alert alert-success alert-with-icon" data-notify="container">
+                                        <div class="container">
+                                            <div class="alert-wrapper">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <i class="nc-icon nc-simple-remove"></i>
+                                                </button>
+                                                <div class="message">
+                                                    <i class="nc-icon nc-bell-55"></i> Register Success</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="checkRegisterFail" class="alert alert-danger alert-with-icon" data-notify="container">
+                                        <div class="container">
+                                            <div class="alert-wrapper">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <i class="nc-icon nc-simple-remove"></i>
+                                                </button>
+                                                <div class="message">
+                                                    <i class="nc-icon nc-bell-55"></i> Register Fail.Error Account is Exist or Error Register</div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- <br> -->
-                                    <button class="btn btn-warning btn-round">Register</button>
+
+                                    <button class="btn btn-warning btn-round" (click)="registerPromptpay()">Register</button>
                                 </form>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab title="GetDetail">
-                            <ng-template ngbTabContent>
-                                <h3 class="text-muted">Not following anyone yet :(</h3>
-                                <br>
-                                <button class="btn btn-warning btn-round">Find artists</button>
-                            </ng-template>
-                        </ngb-tab>
                         <ngb-tab title="Delete">
-                                <ng-template ngbTabContent>
+                            <ng-template ngbTabContent>
 
-                                        <h2 class="text-center">Delete PromtpPay</h2>
-                                        <br>
-                                        <!-- <h6>Select Type</h6>
+                                <h2 class="text-center">Delete PromtpPay</h2>
+                                <br>
+                                <!-- <h6>Select Type</h6>
                                         <div class="row">
                                                 <div class="containerImage">
                                                         <img src="https://image.flaticon.com/icons/svg/186/186239.svg" alt="Mobile" class="image resize">
@@ -111,37 +129,70 @@
                                                         </div>
                                                 </div>
                                         </div> -->
-        
-                                        <form class="contact-form">
-                                            
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Mobile/Citizen Card</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="nc-icon nc-single-02"></i>
-                                                        </span>
-                                                        <select class="form-control" [(ngModel)]="registerSet.IDType" name="type">
-                                                            <option value="mobile">Mobile No.</option>
-                                                            <option value="Citizen">Citizen ID.</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label>Mobile Number/No. ID Card</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="nc-icon nc-credit-card"></i>
-                                                        </span>
-                                                        <input type="text" class="form-control" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                
+
+                                <form class="contact-form">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Mobile/Citizen Card</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-single-02"></i>
+                                                </span>
+                                                <select class="form-control" [(ngModel)]="deleteSet.IDType" name="type">
+                                                    <option value="mobile">Mobile No.</option>
+                                                    <option value="Citizen">Citizen ID.</option>
+                                                </select>
                                             </div>
-                                            <!-- <br> -->
-                                            <button class="btn btn-warning btn-round">Register</button>
-                                        </form>
-                                    </ng-template>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Mobile Number/No. ID Card</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="nc-icon nc-credit-card"></i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="value" [(ngModel)]="deleteSet.IDValue" name="value">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div *ngIf="checkAccountPromptpayNotExist" class="alert alert-danger alert-with-icon" data-notify="container">
+                                        <div class="container">
+                                            <div class="alert-wrapper">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <i class="nc-icon nc-simple-remove"></i>
+                                                </button>
+                                                <div class="message">
+                                                    <i class="nc-icon nc-bell-55"></i>Account Promptpay not Exist</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="checkDeleteSuccess" class="alert alert-success alert-with-icon" data-notify="container">
+                                        <div class="container">
+                                            <div class="alert-wrapper">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <i class="nc-icon nc-simple-remove"></i>
+                                                </button>
+                                                <div class="message">
+                                                    <i class="nc-icon nc-bell-55"></i>Delete Success</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="checkDeleteFail" class="alert alert-success alert-with-icon" data-notify="container">
+                                        <div class="container">
+                                            <div class="alert-wrapper">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <i class="nc-icon nc-simple-remove"></i>
+                                                </button>
+                                                <div class="message">
+                                                    <i class="nc-icon nc-bell-55"></i>Delete Fail</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <br> -->
+                                    <button class="btn btn-warning btn-round" (click)="deletePromptpay()">Delete</button>
+                                </form>
+                            </ng-template>
                         </ngb-tab>
                     </ngb-tabset>
                 </div>
